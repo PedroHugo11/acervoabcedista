@@ -1,4 +1,4 @@
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 import { YearSections } from '@/app/ano/[year]/YearSections';
 import Link from "next/link";
 import {
@@ -12,6 +12,7 @@ import {
 export default async function Page({ params }: any) {
   const resolvedParams = await params;
   const year = Number(resolvedParams.year);
+  const supabase = getSupabaseClient();
 
   const { data: shirts } = await supabase
     .from("shirts")

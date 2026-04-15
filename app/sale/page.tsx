@@ -1,8 +1,10 @@
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 import { ShirtCard } from "@/components/ShirtCard";
 import { Container, Typography, Box } from "@mui/material";
 
 export default async function Page() {
+  const supabase = getSupabaseClient();
+  
   const { data: shirts } = await supabase
     .from("shirts")
     .select(`

@@ -6,12 +6,13 @@ import { YearFilter } from "@/features/home/YearFilter";
 import { HomePreview } from "@/features/home/HomePreview";
 import { Box, Button, Container, Typography } from "@mui/material";
 import { ShirtCard } from "@/components/ShirtCard";
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 
 export default function Home() {
   const [year, setYear] = useState<number | null>(null);
   const [shirts, setShirts] = useState<any[]>([]);
   const router = useRouter();
+  const supabase = getSupabaseClient();
 
   useEffect(() => {
     async function fetchData() {

@@ -1,4 +1,4 @@
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 import { Container, Typography, Box, Breadcrumbs } from "@mui/material";
 import Link from "next/link";
 import { ShirtGallery } from "@/components/ShirtGallery";
@@ -7,7 +7,8 @@ import { Chip } from "@mui/material";
 export default async function Page({ params }: any) {
   const resolvedParams = await params;
   const id = resolvedParams.id;
-
+  const supabase = getSupabaseClient();
+  
   const { data: shirt } = await supabase
     .from("shirts")
     .select(

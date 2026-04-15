@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 import { ShirtCard } from "@/components/ShirtCard";
 import { Container, Typography, Box, Select, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -12,7 +12,7 @@ export default function AnoPage() {
   const [filtered, setFiltered] = useState<any[]>([]);
   const [year, setYear] = useState<number | null>(null);
   const [status, setStatus] = useState<string | null>(null);
-
+  const supabase = getSupabaseClient();
   const router = useRouter();
 
   useEffect(() => {

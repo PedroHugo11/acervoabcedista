@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/services/supabase";
+import { getSupabaseClient } from '@/services/supabase';
 import { ShirtCard } from "@/components/ShirtCard";
 import { Button, Typography, Box, Skeleton } from "@mui/material";
 import { useRouter } from "next/navigation";
@@ -15,6 +15,7 @@ export function HomePreview({ year }: Props) {
   const [shirts, setShirts] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const supabase = getSupabaseClient();
 
   useEffect(() => {
     if (!year) {
