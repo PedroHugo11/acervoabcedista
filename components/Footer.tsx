@@ -27,7 +27,7 @@ export function Footer() {
         >
           {/* 🧾 Branding */}
           <Box>
-            <Typography variant="h6" fontWeight={700}>
+            <Typography variant="h6" sx={{ fontWeight: 700 }}>
               Meu Acervo
             </Typography>
 

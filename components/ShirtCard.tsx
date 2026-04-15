@@ -133,7 +133,7 @@ export function ShirtCard({ shirt }: Props) {
         </Box>
 
         <CardContent>
-          <Typography variant="subtitle1" fontWeight={600}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
             {shirt.name}
           </Typography>
 

@@ -32,10 +32,9 @@ export default async function Page({ params }: any) {
 
     return (
       <Box sx={{ mt: 5 }}>
-        <Typography variant="h5" fontWeight={600} gutterBottom>
+        <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
           {title}
         </Typography>
-
         <Divider sx={{ mb: 2 }} />
 
         <Box
@@ -73,7 +72,10 @@ export default async function Page({ params }: any) {
 
         {/* Seções */}
         <Breadcrumbs sx={{ mb: 0 }}>
-          <Link href="/ano" style={{ textDecoration: "none", color: "#000000" }}>
+          <Link
+            href="/ano"
+            style={{ textDecoration: "none", color: "#000000" }}
+          >
             Veja por ano
           </Link>
 

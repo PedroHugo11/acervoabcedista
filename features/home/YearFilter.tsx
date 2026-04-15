@@ -16,8 +16,9 @@ export function YearFilter({ year, setYear }: Props) {
   );
 
   return (
-    <Select
-      value={year ?? ""}
+    <Select<string>
+      fullWidth
+      value={year?.toString() ?? ""}
       onChange={(e) => {
         const value = e.target.value;
         setYear(value === "" ? null : Number(value));

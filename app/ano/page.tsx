@@ -75,9 +75,9 @@ export default function AnoPage() {
           }}
         >
           {/* Ano */}
-          <Select
+          <Select<string>
             fullWidth
-            value={year ?? ""}
+            value={year?.toString() ?? ""}
             onChange={(e) => {
               const value = e.target.value;
               setYear(value === "" ? null : Number(value));
@@ -132,7 +132,9 @@ export default function AnoPage() {
                     textAlign: "center",
                   }}
                 >
-                  <Typography fontWeight={600}>{y}</Typography>
+                  <Typography sx={{ fontWeight: 600 }}>
+                    {y}
+                  </Typography>
 
                   <Typography variant="caption">{supplier || "—"}</Typography>
                 </Box>
